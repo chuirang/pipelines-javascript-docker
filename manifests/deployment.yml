@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: chuirangpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chuirangpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: chuirangpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: chuirangpipelinesjavascriptdocker 
+          image: mycontainerregistry230920.azurecr.io/chuirangpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
